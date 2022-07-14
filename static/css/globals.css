@@ -50,6 +50,18 @@ input::placeholder {
   display: block;
 }
 
+@media (max-width: 34.375rem) {
+  .home>main {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .home>main>.logo {
+    height: auto;
+    width: 100%;
+  }
+}
+
 .inputContainer {
   position: relative;
   height: 3.125rem;
@@ -78,4 +90,5 @@ input::placeholder {
   font-size: 1.125rem;
   font-weight: 500;
   text-align: center;
+  width: 100%;
 }

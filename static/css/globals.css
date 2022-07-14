@@ -32,6 +32,15 @@ input::placeholder {
   color: grey;
 }
 
+a {
+  text-decoration: none;
+  color: auto;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .home {
   background-color: var(--accent);
   height: 100vh;
@@ -91,4 +100,50 @@ input::placeholder {
   font-weight: 500;
   text-align: center;
   width: 100%;
+}
+
+header {
+  background-color: var(--accent);
+  box-shadow: 0 0.25rem 0 0 var(--borderColor);
+  position: sticky;
+  top: 0;
+}
+
+.headerTop {
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.headerTop>img {
+  height: 3.125rem;
+  display: block;
+}
+
+main.search {
+  padding: 2rem;
+}
+
+.results {
+  display: grid;
+  gap: 2rem;
+}
+
+.result {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.result .title {
+  color: rgb(0, 140, 255);
+}
+
+.result .title>h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.result .url {
+  color: rgb(48, 172, 48);
 }

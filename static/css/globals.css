@@ -1,0 +1,81 @@
+:root {
+  --accent: #FFD749;
+  --text: #000000;
+  --boxBG: #FFFFFF;
+  --borderColor: #000000;
+  --border: inset 0 0 0 0.25rem var(--borderColor);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--text);
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+input,
+button {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 1rem;
+  width: 100%;
+}
+
+input::placeholder {
+  opacity: 1;
+  color: grey;
+}
+
+.home {
+  background-color: var(--accent);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home>main {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.home>main>.logo {
+  height: 6.25rem;
+  display: block;
+}
+
+.inputContainer {
+  position: relative;
+  height: 3.125rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1rem 1.25rem;
+  align-items: center;
+  background-color: var(--boxBG);
+  padding: 0 1rem;
+  box-shadow: 0 0.25rem 0 0 var(--borderColor), var(--border);
+}
+
+.inputContainer>input {
+  font-size: 1.125rem;
+}
+
+.inputContainer>button {
+  height: 100%;
+}
+
+.inputContainer>button>.mdi {
+  font-size: 1.25rem;
+}
+
+.convincer {
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-align: center;
+}

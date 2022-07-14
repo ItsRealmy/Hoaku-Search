@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/static/css/globals.css" />
   <link rel="stylesheet" href="/node_modules/@fontsource/ibm-plex-sans/400.css" />
   <link rel="stylesheet" href="/node_modules/@fontsource/ibm-plex-sans/500.css" />
+  <link rel="stylesheet" href="/node_modules/@fontsource/ibm-plex-sans/700.css" />
   <link rel="stylesheet" href="/node_modules/@mdi/font/css/materialdesignicons.min.css" />
   <title>Hoaku</title>
 </head>
@@ -26,30 +27,37 @@
   </header>
 
   <main class="search">
-    <div class="results">
-      <% for (const result of results) { %>
-        <div class="result">
-          <a href="<%= result.url %>" class="title"><h2><%= result.title %></h2></a>
-          <a href="<%= result.url %>" class="url"><p><%= result.url %></p></a>
-          <p class="description"><%= result.description %></p>
-        </div>  
-      <% } %>
-    </div>
+    <% if (results.length !== 0) { %>
+      <div class="results">
+        <% for (const result of results) { %>
+          <div class="result">
+            <a href="<%= result.url %>" class="title"><h2><%= result.title %></h2></a>
+            <a href="<%= result.url %>" class="url"><p><%= result.url %></p></a>
+            <p class="description"><%= result.description %></p>
+          </div>  
+        <% } %>
+      </div>
 
-    <div class="pagination <%= (page == 0) && 'firstPage' %>">
-      <% if (page !== 0) { %>
+      <div class="pagination <%= (page == 0) && 'firstPage' %>">
+        <% if (page !== 0) { %>
+          <form>
+            <input type="hidden" name="q" value="<%= query %>" />
+            <input type="hidden" name="p" value="<%= page - 1 %>" />
+            <button><i class="mdi mdi-chevron-left"></i> Previous</button>
+          </form>
+        <% } %>
         <form>
           <input type="hidden" name="q" value="<%= query %>" />
-          <input type="hidden" name="p" value="<%= page - 1 %>" />
-          <button><i class="mdi mdi-chevron-left"></i> Previous</button>
+          <input type="hidden" name="p" value="<%= page + 1 %>" />
+          <button>Next <i class="mdi mdi-chevron-right"></i></button>
         </form>
-      <% } %>
-      <form>
-        <input type="hidden" name="q" value="<%= query %>" />
-        <input type="hidden" name="p" value="<%= page + 1 %>" />
-        <button>Next <i class="mdi mdi-chevron-right"></i></button>
-      </form>
-    </div>
+      </div>
+    <% } else { %>
+      <div class="noResults">
+        <h2>We tried hard, but couldn't find anything!</h2>
+        <p>Maybe try rewording your query?</p>
+      </div>
+    <% } %>
   </main>
 </body>
 </html>

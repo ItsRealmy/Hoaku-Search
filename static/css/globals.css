@@ -116,9 +116,13 @@ header {
   gap: 2rem;
 }
 
-.headerTop>img {
+.headerTop>a>img {
   height: 2.5rem;
   display: block;
+}
+
+.headerTop>form {
+  max-width: 37.5rem;
 }
 
 main.search {
@@ -147,4 +151,20 @@ main.search {
 
 .result .url {
   color: rgb(48, 172, 48);
+}
+
+@media (max-width: 40.625rem) {
+  .headerTop {
+    padding: 1rem;
+  }
+
+  main.search {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 31.25rem) {
+  .headerTop>a {
+    display: none;    
+  }
 }

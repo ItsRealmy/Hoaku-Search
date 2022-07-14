@@ -110,24 +110,25 @@ header {
 }
 
 .headerTop {
-  padding: 1.25rem;
+  padding: 1.25rem 3rem;
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 
 .headerTop>img {
-  height: 3.125rem;
+  height: 2.5rem;
   display: block;
 }
 
 main.search {
-  padding: 2rem;
+  padding: 2rem 3rem;
 }
 
 .results {
   display: grid;
   gap: 2rem;
+  max-width: 37.5rem;
 }
 
 .result {

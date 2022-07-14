@@ -35,6 +35,21 @@
         </div>  
       <% } %>
     </div>
+
+    <div class="pagination <%= (page == 0) && 'firstPage' %>">
+      <% if (page !== 0) { %>
+        <form>
+          <input type="hidden" name="q" value="<%= query %>" />
+          <input type="hidden" name="p" value="<%= page - 1 %>" />
+          <button><i class="mdi mdi-chevron-left"></i> Previous</button>
+        </form>
+      <% } %>
+      <form>
+        <input type="hidden" name="q" value="<%= query %>" />
+        <input type="hidden" name="p" value="<%= page + 1 %>" />
+        <button>Next <i class="mdi mdi-chevron-right"></i></button>
+      </form>
+    </div>
   </main>
 </body>
 </html>

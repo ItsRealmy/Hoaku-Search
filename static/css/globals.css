@@ -3,7 +3,8 @@
   --text: #000000;
   --boxBG: #FFFFFF;
   --borderColor: #000000;
-  --border: inset 0 0 0 0.25rem var(--borderColor);
+  --border: inset 0 0 0 0.2rem var(--borderColor);
+  --borderShadow: 0 0.25rem 0 0 var(--borderColor);
 }
 
 * {
@@ -34,7 +35,7 @@ input::placeholder {
 
 a {
   text-decoration: none;
-  color: auto;
+  color: inherit;
 }
 
 a:hover {
@@ -47,6 +48,10 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.home a {
+  text-decoration: underline;
 }
 
 .home>main {
@@ -80,7 +85,7 @@ a:hover {
   align-items: center;
   background-color: var(--boxBG);
   padding: 0 1rem;
-  box-shadow: 0 0.25rem 0 0 var(--borderColor), var(--border);
+  box-shadow: var(--borderShadow), var(--border);
 }
 
 .inputContainer>input {
@@ -104,7 +109,7 @@ a:hover {
 
 header {
   background-color: var(--accent);
-  box-shadow: 0 0.25rem 0 0 var(--borderColor);
+  box-shadow: var(--borderShadow);
   position: sticky;
   top: 0;
 }
@@ -117,22 +122,27 @@ header {
 }
 
 .headerTop>a>img {
-  height: 2.5rem;
+  height: 1.75rem;
   display: block;
 }
 
-.headerTop>form {
-  max-width: 37.5rem;
+.headerTop>.inputContainer {
+  max-width: 30rem;
+  height: 2.5rem;
+}
+
+.headerTop>.inputContainer>input {
+  font-size: 1rem;
 }
 
 main.search {
   padding: 2rem 3rem;
+  max-width: 37.5rem;
 }
 
 .results {
   display: grid;
   gap: 2rem;
-  max-width: 37.5rem;
 }
 
 .result {
@@ -167,4 +177,24 @@ main.search {
   .headerTop>a {
     display: none;    
   }
+}
+
+.pagination {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.pagination.firstPage {
+  grid-template-columns: 1fr;
+}
+
+.pagination > form > button {
+  background-color: var(--accent);
+  box-shadow: var(--borderShadow), var(--border);
+  height: 3.125rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+  cursor: pointer;
 }

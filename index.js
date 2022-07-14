@@ -33,6 +33,8 @@ app.get('/search', async (req, res) => {
 
     const completedTemplate = await ejs.renderFile(path.join(__dirname, 'views/search.ejs'), {
       results: resp.results,
+      page,
+      query,
     });
 
     return res.send(completedTemplate);

@@ -1,4 +1,4 @@
-<img src="https://i.ibb.co/7Vs7Wyr/Hoaku-Banner.png" alt="Screenshot of Hoaku" style="height: 100px;margin-bottom: 30px;" />
+<img src="https://i.ibb.co/7Vs7Wyr/Hoaku-Banner.png" alt="Hoaku Logo" style="height: 100px;margin-bottom: 30px;" />
 
 ## What is Hoaku?
 Hoaku is an open source search engine with a pleasent and unique user interface.

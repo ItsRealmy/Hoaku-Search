@@ -136,7 +136,7 @@ header {
 }
 
 .headerNav {
-  margin-left: 3rem;
+  padding-left: 3rem;
   height: 2.5rem;
   display: flex;
 }
@@ -184,6 +184,10 @@ main.search {
 @media (max-width: 40.625rem) {
   .headerTop {
     padding: 1rem;
+  }
+
+  .headerNav {
+    padding: 0 1rem;
   }
 
   main.search {
